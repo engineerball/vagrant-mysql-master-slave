@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "master" do |master|
     master.vm.box = "ubuntu/trusty64"
-#    master.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    master.vm.box_url = "http://files.vagrantup.com/precise64.box"
     master.vm.hostname = "master"
     master.vm.network :private_network, :ip => "192.168.30.100"
     master.vm.provision :puppet do |puppet|
@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "slave" do |slave|
     slave.vm.box = "ubuntu/trusty64"
-#    slave.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    slave.vm.box_url = "http://files.vagrantup.com/precise64.box"
     slave.vm.hostname = "slave"
     slave.vm.network :private_network, :ip => "192.168.30.101"
     slave.vm.provision :puppet do |puppet|

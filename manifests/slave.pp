@@ -17,7 +17,7 @@ class { '::mysql::server':
 }
 
 exec { "join_master":
-    command => "mysql -uroot -e "STOP SLAVE;  CHANGE MASTER to MASTER_HOST='192.168.30.100', MASTER_USER='repl', MASTER_PASSWORD='repl', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=532; START SLAVE",
+    command => "mysql -uroot -e \"STOP SLAVE;  CHANGE MASTER to MASTER_HOST='192.168.30.100', MASTER_USER='repl', MASTER_PASSWORD='repl', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=449; START SLAVE\"",
     path    => "/usr/local/bin/:/bin/:/usr/bin",
     # path    => [ "/usr/local/bin/", "/bin/" ],  # alternative syntax
 }
